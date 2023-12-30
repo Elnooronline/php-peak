@@ -42,14 +42,17 @@ class Map implements ArrayAccess, IteratorAggregate, Countable
      */
     public function get(string $key = null, $default = null)
     {
-        if (is_null($key))
+        if (is_null($key)) {
             return $this->all();
+        }
 
-        if ($this->has($key))
+        if ($this->has($key)) {
             return $this->data[$key];
+        }
 
-        if (! str_contains($key, '.'))
+        if (! str_contains($key, '.')) {
             return $this->data[$key] ?? $default;
+        }
 
         $data = $this->data;
 
@@ -84,8 +87,9 @@ class Map implements ArrayAccess, IteratorAggregate, Countable
      */
     public function set(string $key, $value = null)
     {
-        if (is_null($value))
+        if (is_null($value)) {
             return $this->push($key);
+        }
 
         $this->data[$key] = $value;
 

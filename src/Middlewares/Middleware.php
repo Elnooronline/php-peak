@@ -2,9 +2,9 @@
 
 namespace Elnooronline\Peak\Middlewares;
 
-use Elnooronline\Peak\Support\Traits\InteractsWithMiddlewares;
-
 use Countable;
+
+use Elnooronline\Peak\Support\Traits\InteractsWithMiddlewares;
 use IteratorAggregate;
 
 final class Middleware implements Countable, IteratorAggregate
@@ -97,8 +97,9 @@ final class Middleware implements Countable, IteratorAggregate
     public function onlyActive(): array
     {
         return array_filter(array_map(function ($item) {
-            if (is_array($item))
+            if (is_array($item)) {
                 return $item[0] ?? null;
+            }
 
             return $item ?? null;
         }, $this->all()));

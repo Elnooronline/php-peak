@@ -2,8 +2,8 @@
 
 namespace Elnooronline\Peak\Tests;
 
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use Http\Discovery\Psr17FactoryDiscovery;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {

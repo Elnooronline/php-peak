@@ -52,7 +52,7 @@ abstract class Request
     }
 
     /**
-     * Request version
+     * Request version.
      *
      * @return string
      */

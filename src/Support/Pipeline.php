@@ -79,8 +79,9 @@ final class Pipeline implements PipelineInterface
 
     protected function invokePipe($pipe, $passable, $next)
     {
-        if (is_callable($pipe))
+        if (is_callable($pipe)) {
             return $pipe($passable, $next);
+        }
 
         $method = $this->method;
 
@@ -89,14 +90,15 @@ final class Pipeline implements PipelineInterface
             $pipe = $pipe[0];
         }
 
-        if (is_object($pipe) && $pipe instanceof InvokablePipelineInterface)
+        if (is_object($pipe) && $pipe instanceof InvokablePipelineInterface) {
             return $pipe->{$method}($passable, $next);
+        }
 
         if (is_string($pipe) && class_exists($pipe)) {
-            $pipe = (new $pipe);
+            $pipe = (new $pipe());
 
             if ($pipe instanceof InvokablePipelineInterface) {
-                return (new $pipe)->{$method}($passable, $next);
+                return (new $pipe())->{$method}($passable, $next);
             }
         }
 

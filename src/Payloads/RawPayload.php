@@ -2,8 +2,8 @@
 
 namespace Elnooronline\Peak\Payloads;
 
-use LogicException;
 use Elnooronline\Peak\Payloads\Contracts\PayloadInterface;
+use LogicException;
 
 class RawPayload implements PayloadInterface
 {

@@ -83,8 +83,9 @@ class Uri
      */
     public function withBase($relative): self
     {
-        if (! is_string($relative))
+        if (! is_string($relative)) {
             return $this;
+        }
 
         $relative = $this->toPsrUri($relative);
 
