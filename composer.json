@@ -1,0 +1,45 @@
+{
+    "name": "elnooronline/php-peak",
+    "description": "Write API integrations and SDKs in a simple and elegant way.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Elnooronline\\Peak\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elnooronline\\Peak\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elnooronline",
+            "email": "elnooronline@gmail.com"
+        },
+        {
+            "name": "AbdallaMohammed",
+            "email": "abdallah.r660@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "php": "^7.4|^8.0|^8.1|^8.2",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "php-http/discovery": "1.x-dev"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "guzzlehttp/guzzle": "^7.8",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
